@@ -3,30 +3,32 @@
 
 disp ('-------- reading signal and computing cepstra ----------');
 
+dataFolder = '../data/'
+
 %-----------reading in the training data----------------------------------
-[training_data1_1,Fs1_1,bits1]=wavread('1_1.wav');
-[training_data1_2,Fs1_2,bits1]=wavread('1_2.wav');
-[training_data1_3,Fs1_3,bits1]=wavread('1_3.wav');
-[training_data2_1,Fs2_1,bits2]=wavread('2_1.wav');
-[training_data2_2,Fs2_2,bits2]=wavread('2_2.wav');
-[training_data2_3,Fs2_3,bits2]=wavread('2_3.wav');
-[training_data3_1,Fs3_1,bits3]=wavread('3_1.wav');
-[training_data3_2,Fs3_2,bits3]=wavread('3_2.wav');
-[training_data3_3,Fs3_3,bits3]=wavread('3_3.wav');
-[training_data4_1,Fs4_1,bits4]=wavread('4_1.wav');
-[training_data4_2,Fs4_2,bits4]=wavread('4_2.wav');
-[training_data4_3,Fs4_3,bits4]=wavread('4_3.wav');
-[training_data5_1,Fs5_1,bits5]=wavread('5_1.wav');
-[training_data5_2,Fs5_2,bits5]=wavread('5_2.wav');
-[training_data5_3,Fs5_3,bits5]=wavread('5_3.wav');
+[training_data1_1,Fs1_1,bits1]=wavread(strcat(dataFolder, '1_1.wav'));
+[training_data1_2,Fs1_2,bits1]=wavread(strcat(dataFolder, '1_2.wav'));
+[training_data1_3,Fs1_3,bits1]=wavread(strcat(dataFolder, '1_3.wav'));
+[training_data2_1,Fs2_1,bits2]=wavread(strcat(dataFolder, '2_1.wav'));
+[training_data2_2,Fs2_2,bits2]=wavread(strcat(dataFolder, '2_2.wav'));
+[training_data2_3,Fs2_3,bits2]=wavread(strcat(dataFolder, '2_3.wav'));
+[training_data3_1,Fs3_1,bits3]=wavread(strcat(dataFolder, '3_1.wav'));
+[training_data3_2,Fs3_2,bits3]=wavread(strcat(dataFolder, '3_2.wav'));
+[training_data3_3,Fs3_3,bits3]=wavread(strcat(dataFolder, '3_3.wav'));
+[training_data4_1,Fs4_1,bits4]=wavread(strcat(dataFolder, '4_1.wav'));
+[training_data4_2,Fs4_2,bits4]=wavread(strcat(dataFolder, '4_2.wav'));
+[training_data4_3,Fs4_3,bits4]=wavread(strcat(dataFolder, '4_3.wav'));
+[training_data5_1,Fs5_1,bits5]=wavread(strcat(dataFolder, '5_1.wav'));
+[training_data5_2,Fs5_2,bits5]=wavread(strcat(dataFolder, '5_2.wav'));
+[training_data5_3,Fs5_3,bits5]=wavread(strcat(dataFolder, '5_3.wav'));
 
-[testing_data1,Fs1t,bits1t]=wavread('1t.wav');
-[testing_data2,Fs2t,bits2t]=wavread('2t.wav');
-[testing_data3,Fs3t,bits3t]=wavread('3t.wav');
-[testing_data4,Fs4t,bits4t]=wavread('4t.wav');
-[testing_data5,Fs5t,bits5t]=wavread('5t.wav');
+[testing_data1,Fs1t,bits1t]=wavread(strcat(dataFolder, '1t.wav'));
+[testing_data2,Fs2t,bits2t]=wavread(strcat(dataFolder, '2t.wav'));
+[testing_data3,Fs3t,bits3t]=wavread(strcat(dataFolder, '3t.wav'));
+[testing_data4,Fs4t,bits4t]=wavread(strcat(dataFolder, '4t.wav'));
+[testing_data5,Fs5t,bits5t]=wavread(strcat(dataFolder, '5t.wav'));
 
-[testing_datap,Fspt,bitspt]=wavread('Peut.wav');
+[testing_datap,Fspt,bitspt]=wavread(strcat(dataFolder, 'Peut.wav'));
 
 %-------------feature extraction, 12 coeff. ------------------------------------------
 c1_1=melcepst(training_data1_1,Fs1_1)';
@@ -57,14 +59,9 @@ c5t=melcepst(testing_data5,Fs5t)';
 
 cp=melcepst(testing_datap,Fspt)';
 
-%-------------------------------------------------------------------------
-%TODO: afficher la dur�e des fichiers d'entra�nement (en millisecondes) ainsi 
-%que le nombre de vecteurs acoustiques qui en sont extraits (nombre de colonnes de la matrice ci_i)
+disp('---------------- Stats ------------------');
 
-
-
-%-------------------------------------------------------------------------
-
+disp( size(c1_1) )
 
 disp ('-------- training model for 1 ----------');
 
