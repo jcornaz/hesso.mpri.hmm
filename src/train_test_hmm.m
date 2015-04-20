@@ -71,17 +71,17 @@ c5 = {c5_1,c5_2,c5_3};
 disp ('-------- Durées --------');
 
 disp ('-------- Nombres de vecteurs moyen --------');
-dispColumnMean( 'Chiffe 1', c1 );
-dispColumnMean( 'Chiffe 2', c2 );
-dispColumnMean( 'Chiffe 3', c3 );
-dispColumnMean( 'Chiffe 4', c4 );
-dispColumnMean( 'Chiffe 5', c5 );
+dispColumnMean( 'Chiffe 1', c1_1, c1_2, c1_3 );
+dispColumnMean( 'Chiffe 2', c2_1, c2_2, c2_3 );
+dispColumnMean( 'Chiffe 3', c3_1, c3_2, c3_3 );
+dispColumnMean( 'Chiffe 4', c4_1, c4_2, c4_3 );
+dispColumnMean( 'Chiffe 5', c5_1, c5_2, c5_3 );
 
 disp ('-------- training ----------');
 % HMM parameters
 n_iter = 5;
 K = [1 1 1 1 1];
-N = [3 5 6 6 5];
+N = [5 7 8 8 7];
 
 
 disp ('-------- training model for 1 ----------');
