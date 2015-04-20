@@ -147,6 +147,7 @@ A5=NEWA; MI5=NEWMI; SIGMA5=NEWSIGMA; PCOMP5=NEWPCOMP;
 
 %disp ('====== now recognizing  =======') 
 %format short e % this is to see correctly all elements of a vector
+hh = zeros([5,6]);
 
 Pvit11 = viterbi_log (c1t, A1, MI1, SIGMA1,PCOMP1);
 Pvit12 = viterbi_log (c1t, A2, MI2, SIGMA2,PCOMP2);
@@ -154,6 +155,7 @@ Pvit13 = viterbi_log (c1t, A3, MI3, SIGMA3,PCOMP3);
 Pvit14 = viterbi_log (c1t, A4, MI4, SIGMA4,PCOMP4);
 Pvit15 = viterbi_log (c1t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
+hh(:,1) = h;
 [~,ii] = max(h); 
 disp(['testing for 1t, the best model is ' num2str(ii) ]);
 
@@ -163,6 +165,7 @@ Pvit13 = viterbi_log (c2t, A3, MI3, SIGMA3,PCOMP3);
 Pvit14 = viterbi_log (c2t, A4, MI4, SIGMA4,PCOMP4);
 Pvit15 = viterbi_log (c2t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
+hh(:,2) = h;
 [~,ii] = max(h); 
 disp(['testing for 2t, the best model is ' num2str(ii) ]);
 
@@ -172,6 +175,7 @@ Pvit13 = viterbi_log (c3t, A3, MI3, SIGMA3,PCOMP3);
 Pvit14 = viterbi_log (c3t, A4, MI4, SIGMA4,PCOMP4);
 Pvit15 = viterbi_log (c3t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
+hh(:,3) = h;
 [~,ii] = max(h); 
 disp(['testing for 3t, the best model is ' num2str(ii) ]);
 
@@ -181,6 +185,7 @@ Pvit13 = viterbi_log (c4t, A3, MI3, SIGMA3,PCOMP3);
 Pvit14 = viterbi_log (c4t, A4, MI4, SIGMA4,PCOMP4);
 Pvit15 = viterbi_log (c4t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
+hh(:,4) = h;
 [~,ii] = max(h); 
 disp(['testing for 4t, the best model is ' num2str(ii) ]);
 
@@ -190,7 +195,8 @@ Pvit13 = viterbi_log (c5t, A3, MI3, SIGMA3,PCOMP3);
 Pvit14 = viterbi_log (c5t, A4, MI4, SIGMA4,PCOMP4);
 Pvit15 = viterbi_log (c5t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
-[nic,ii] = max(h); 
+hh(:,5) = h;
+[~,ii] = max(h); 
 disp(['testing for 5t, the best model is ' num2str(ii) ]);
 
 Pvit11 = viterbi_log (cp, A1, MI1, SIGMA1,PCOMP1);
@@ -199,5 +205,9 @@ Pvit13 = viterbi_log (cp, A3, MI3, SIGMA3,PCOMP3);
 Pvit14 = viterbi_log (cp, A4, MI4, SIGMA4,PCOMP4);
 Pvit15 = viterbi_log (cp, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
-[nic,ii] = max(h); 
+hh(:,6) = h;
+[~,ii] = max(h); 
 disp(['testing for Peut, the best model is ' num2str(ii) ]);
+
+plot( hh );
+legend('un', 'deux','trois','quatre','cinq','Peut');
