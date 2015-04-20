@@ -68,11 +68,13 @@ c3 = {c3_1,c3_2,c3_3};
 c4 = {c4_1,c4_2,c4_3};
 c5 = {c5_1,c5_2,c5_3};
 
+disp( size(c1_1) )
 disp ('-------- training ----------');
 % HMM parameters
 n_iter = 5;
 K = [1 1 1 1 1];
 N = [3 5 6 6 5];
+
 
 disp ('-------- training model for 1 ----------');
 A=inittran(N(1)); 
