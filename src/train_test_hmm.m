@@ -69,6 +69,11 @@ c4 = {c4_1,c4_2,c4_3};
 c5 = {c5_1,c5_2,c5_3};
 
 disp ('-------- Durées --------');
+dispAudioLengthMean( 'Chiffre 1', 16000, training_data1_1, training_data1_2, training_data1_3 );
+dispAudioLengthMean( 'Chiffre 2', 16000, training_data2_1, training_data2_2, training_data2_3 );
+dispAudioLengthMean( 'Chiffre 3', 16000, training_data3_1, training_data3_2, training_data3_3 );
+dispAudioLengthMean( 'Chiffre 4', 16000, training_data4_1, training_data4_2, training_data4_3 );
+dispAudioLengthMean( 'Chiffre 5', 16000, training_data5_1, training_data5_2, training_data5_3 );
 
 disp ('-------- Nombres de vecteurs moyen --------');
 dispColumnMean( 'Chiffe 1', c1_1, c1_2, c1_3 );
