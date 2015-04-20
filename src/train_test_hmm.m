@@ -68,7 +68,15 @@ c3 = {c3_1,c3_2,c3_3};
 c4 = {c4_1,c4_2,c4_3};
 c5 = {c5_1,c5_2,c5_3};
 
-disp( size(c1_1) )
+disp ('-------- Durées --------');
+
+disp ('-------- Nombres de vecteurs moyen --------');
+dispColumnMean( 'Chiffe 1', c1 );
+dispColumnMean( 'Chiffe 2', c2 );
+dispColumnMean( 'Chiffe 3', c3 );
+dispColumnMean( 'Chiffe 4', c4 );
+dispColumnMean( 'Chiffe 5', c5 );
+
 disp ('-------- training ----------');
 % HMM parameters
 n_iter = 5;
