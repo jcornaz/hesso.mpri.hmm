@@ -86,7 +86,7 @@ disp ('-------- training ----------');
 % HMM parameters
 n_iter = 5;
 K = [1 1 1 1 1];
-N = [5 7 8 8 7];
+N = [5 6 8 8 7];
 
 
 disp ('-------- training model for 1 ----------');
