@@ -157,7 +157,7 @@ Pvit15 = viterbi_log (c1t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
 hh(:,1) = h;
 [~,ii] = max(h); 
-disp(['testing for 1t, the best model is ' num2str(ii) ]);
+disp(['testing for 1t, the best model is ' num2str(ii) ' (' num2str(h(ii)) ')']);
 
 Pvit11 = viterbi_log (c2t, A1, MI1, SIGMA1,PCOMP1);
 Pvit12 = viterbi_log (c2t, A2, MI2, SIGMA2,PCOMP2);
@@ -167,7 +167,7 @@ Pvit15 = viterbi_log (c2t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
 hh(:,2) = h;
 [~,ii] = max(h); 
-disp(['testing for 2t, the best model is ' num2str(ii) ]);
+disp(['testing for 2t, the best model is ' num2str(ii) ' (' num2str(h(ii)) ')']);
 
 Pvit11 = viterbi_log (c3t, A1, MI1, SIGMA1,PCOMP1);
 Pvit12 = viterbi_log (c3t, A2, MI2, SIGMA2,PCOMP2);
@@ -177,7 +177,7 @@ Pvit15 = viterbi_log (c3t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
 hh(:,3) = h;
 [~,ii] = max(h); 
-disp(['testing for 3t, the best model is ' num2str(ii) ]);
+disp(['testing for 3t, the best model is ' num2str(ii) ' (' num2str(h(ii)) ')']);
 
 Pvit11 = viterbi_log (c4t, A1, MI1, SIGMA1,PCOMP1);
 Pvit12 = viterbi_log (c4t, A2, MI2, SIGMA2,PCOMP2);
@@ -187,7 +187,7 @@ Pvit15 = viterbi_log (c4t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
 hh(:,4) = h;
 [~,ii] = max(h); 
-disp(['testing for 4t, the best model is ' num2str(ii) ]);
+disp(['testing for 4t, the best model is ' num2str(ii) ' (' num2str(h(ii)) ')']);
 
 Pvit11 = viterbi_log (c5t, A1, MI1, SIGMA1,PCOMP1);
 Pvit12 = viterbi_log (c5t, A2, MI2, SIGMA2,PCOMP2);
@@ -197,7 +197,7 @@ Pvit15 = viterbi_log (c5t, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
 hh(:,5) = h;
 [~,ii] = max(h); 
-disp(['testing for 5t, the best model is ' num2str(ii) ]);
+disp(['testing for 5t, the best model is ' num2str(ii)  ' (' num2str(h(ii)) ')']);
 
 Pvit11 = viterbi_log (cp, A1, MI1, SIGMA1,PCOMP1);
 Pvit12 = viterbi_log (cp, A2, MI2, SIGMA2,PCOMP2);
@@ -207,7 +207,9 @@ Pvit15 = viterbi_log (cp, A5, MI5, SIGMA5,PCOMP5);
 h = [Pvit11 Pvit12 Pvit13 Pvit14 Pvit15];
 hh(:,6) = h;
 [~,ii] = max(h); 
-disp(['testing for Peut, the best model is ' num2str(ii) ]);
+disp(['testing for Peut, the best model is ' num2str(ii) ' (' num2str(h(ii)) ')']);
+
+disp( hh );
 
 plot( hh );
 legend('un', 'deux','trois','quatre','cinq','Peut');
